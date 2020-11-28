@@ -16,5 +16,13 @@ namespace lisen
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 calForm= new Form2();
+            this.Hide();
+            calForm.Show();
+            
+        }
     }
 }
