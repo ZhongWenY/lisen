@@ -30,9 +30,9 @@ namespace lisen
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.compressor_textBox = new System.Windows.Forms.TextBox();
             this.compressor_comboBox = new System.Windows.Forms.ComboBox();
             this.power_textBox = new System.Windows.Forms.TextBox();
@@ -97,7 +97,7 @@ namespace lisen
             this.zljytwendu_textBox = new System.Windows.Forms.TextBox();
             this.jjqzlll_textBox = new System.Windows.Forms.TextBox();
             this.jjqhrl_textBox = new System.Windows.Forms.TextBox();
-            this.zljjnbhwd_textBox = new System.Windows.Forms.TextBox();
+            this.jjqnbhwd_textBox = new System.Windows.Forms.TextBox();
             this.jjqnyl_textBox = new System.Windows.Forms.TextBox();
             this.ylqqnl_textBox = new System.Windows.Forms.TextBox();
             this.ylqldyll_textbox = new System.Windows.Forms.TextBox();
@@ -121,6 +121,14 @@ namespace lisen
             this.dayin_button = new System.Windows.Forms.Button();
             this.excel_button = new System.Windows.Forms.Button();
             this.back_button = new System.Windows.Forms.Button();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.textBox42 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -291,24 +299,24 @@ namespace lisen
             // 
             // chart1
             // 
-            chartArea3.AxisX.Interval = 5D;
-            chartArea3.AxisX.Maximum = 20D;
-            chartArea3.AxisX.Minimum = -20D;
-            chartArea3.AxisY.Interval = 10D;
-            chartArea3.AxisY.Maximum = 75D;
-            chartArea3.AxisY.Minimum = 10D;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.Interval = 5D;
+            chartArea1.AxisX.Maximum = 20D;
+            chartArea1.AxisX.Minimum = -20D;
+            chartArea1.AxisY.Interval = 10D;
+            chartArea1.AxisY.Maximum = 75D;
+            chartArea1.AxisY.Minimum = 10D;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(271, 30);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "Series2";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series2";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(367, 203);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
@@ -842,15 +850,15 @@ namespace lisen
             this.jjqhrl_textBox.Size = new System.Drawing.Size(110, 21);
             this.jjqhrl_textBox.TabIndex = 64;
             // 
-            // zljjnbhwd_textBox
+            // jjqnbhwd_textBox
             // 
-            this.zljjnbhwd_textBox.BackColor = System.Drawing.Color.White;
-            this.zljjnbhwd_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.zljjnbhwd_textBox.Location = new System.Drawing.Point(622, 373);
-            this.zljjnbhwd_textBox.Name = "zljjnbhwd_textBox";
-            this.zljjnbhwd_textBox.ReadOnly = true;
-            this.zljjnbhwd_textBox.Size = new System.Drawing.Size(110, 21);
-            this.zljjnbhwd_textBox.TabIndex = 65;
+            this.jjqnbhwd_textBox.BackColor = System.Drawing.Color.White;
+            this.jjqnbhwd_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.jjqnbhwd_textBox.Location = new System.Drawing.Point(622, 373);
+            this.jjqnbhwd_textBox.Name = "jjqnbhwd_textBox";
+            this.jjqnbhwd_textBox.ReadOnly = true;
+            this.jjqnbhwd_textBox.Size = new System.Drawing.Size(110, 21);
+            this.jjqnbhwd_textBox.TabIndex = 65;
             // 
             // jjqnyl_textBox
             // 
@@ -1020,7 +1028,7 @@ namespace lisen
             this.textBox33.ReadOnly = true;
             this.textBox33.Size = new System.Drawing.Size(69, 14);
             this.textBox33.TabIndex = 82;
-            this.textBox33.Text = "kW";
+            this.textBox33.Text = "kW/h";
             // 
             // textBox34
             // 
@@ -1050,6 +1058,7 @@ namespace lisen
             this.xingnengbiao_button.TabIndex = 85;
             this.xingnengbiao_button.Text = "性能表";
             this.xingnengbiao_button.UseVisualStyleBackColor = true;
+            this.xingnengbiao_button.Click += new System.EventHandler(this.xingnengbiao_button_Click);
             // 
             // dayin_button
             // 
@@ -1068,6 +1077,7 @@ namespace lisen
             this.excel_button.TabIndex = 87;
             this.excel_button.Text = "输出EXCEL";
             this.excel_button.UseVisualStyleBackColor = true;
+            this.excel_button.Click += new System.EventHandler(this.excel_button_Click);
             // 
             // back_button
             // 
@@ -1079,12 +1089,100 @@ namespace lisen
             this.back_button.UseVisualStyleBackColor = true;
             this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
+            // textBox35
+            // 
+            this.textBox35.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox35.Location = new System.Drawing.Point(357, 318);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.ReadOnly = true;
+            this.textBox35.Size = new System.Drawing.Size(69, 14);
+            this.textBox35.TabIndex = 89;
+            this.textBox35.Text = "kW";
+            // 
+            // textBox36
+            // 
+            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox36.Location = new System.Drawing.Point(357, 354);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.ReadOnly = true;
+            this.textBox36.Size = new System.Drawing.Size(69, 14);
+            this.textBox36.TabIndex = 90;
+            this.textBox36.Text = "kW";
+            // 
+            // textBox37
+            // 
+            this.textBox37.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox37.Location = new System.Drawing.Point(357, 385);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.ReadOnly = true;
+            this.textBox37.Size = new System.Drawing.Size(69, 14);
+            this.textBox37.TabIndex = 91;
+            this.textBox37.Text = "A";
+            // 
+            // textBox38
+            // 
+            this.textBox38.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox38.Location = new System.Drawing.Point(357, 454);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.ReadOnly = true;
+            this.textBox38.Size = new System.Drawing.Size(69, 14);
+            this.textBox38.TabIndex = 92;
+            this.textBox38.Text = "kg/h";
+            // 
+            // textBox39
+            // 
+            this.textBox39.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox39.Location = new System.Drawing.Point(357, 483);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.ReadOnly = true;
+            this.textBox39.Size = new System.Drawing.Size(69, 14);
+            this.textBox39.TabIndex = 93;
+            this.textBox39.Text = "kg/h";
+            // 
+            // textBox40
+            // 
+            this.textBox40.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox40.Location = new System.Drawing.Point(357, 526);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.ReadOnly = true;
+            this.textBox40.Size = new System.Drawing.Size(69, 14);
+            this.textBox40.TabIndex = 94;
+            this.textBox40.Text = "kg/h";
+            // 
+            // textBox41
+            // 
+            this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox41.Location = new System.Drawing.Point(357, 556);
+            this.textBox41.Name = "textBox41";
+            this.textBox41.ReadOnly = true;
+            this.textBox41.Size = new System.Drawing.Size(69, 14);
+            this.textBox41.TabIndex = 95;
+            this.textBox41.Text = "kg/h";
+            // 
+            // textBox42
+            // 
+            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox42.Location = new System.Drawing.Point(357, 589);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.ReadOnly = true;
+            this.textBox42.Size = new System.Drawing.Size(69, 14);
+            this.textBox42.TabIndex = 96;
+            this.textBox42.Text = "Deg.C";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(954, 673);
+            this.Controls.Add(this.textBox42);
+            this.Controls.Add(this.textBox41);
+            this.Controls.Add(this.textBox40);
+            this.Controls.Add(this.textBox39);
+            this.Controls.Add(this.textBox38);
+            this.Controls.Add(this.textBox37);
+            this.Controls.Add(this.textBox36);
+            this.Controls.Add(this.textBox35);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.excel_button);
             this.Controls.Add(this.dayin_button);
@@ -1108,7 +1206,7 @@ namespace lisen
             this.Controls.Add(this.ylqldyll_textbox);
             this.Controls.Add(this.ylqqnl_textBox);
             this.Controls.Add(this.jjqnyl_textBox);
-            this.Controls.Add(this.zljjnbhwd_textBox);
+            this.Controls.Add(this.jjqnbhwd_textBox);
             this.Controls.Add(this.jjqhrl_textBox);
             this.Controls.Add(this.jjqzlll_textBox);
             this.Controls.Add(this.zljytwendu_textBox);
@@ -1176,6 +1274,7 @@ namespace lisen
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1247,7 +1346,7 @@ namespace lisen
         private System.Windows.Forms.TextBox zljytwendu_textBox;
         private System.Windows.Forms.TextBox jjqzlll_textBox;
         private System.Windows.Forms.TextBox jjqhrl_textBox;
-        private System.Windows.Forms.TextBox zljjnbhwd_textBox;
+        private System.Windows.Forms.TextBox jjqnbhwd_textBox;
         private System.Windows.Forms.TextBox jjqnyl_textBox;
         private System.Windows.Forms.TextBox ylqqnl_textBox;
         private System.Windows.Forms.TextBox ylqldyll_textbox;
@@ -1271,5 +1370,13 @@ namespace lisen
         private System.Windows.Forms.Button dayin_button;
         private System.Windows.Forms.Button excel_button;
         private System.Windows.Forms.Button back_button;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox textBox38;
+        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.TextBox textBox42;
     }
 }
