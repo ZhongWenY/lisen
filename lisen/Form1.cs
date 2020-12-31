@@ -24,5 +24,12 @@ namespace lisen
             calForm.Show();
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form4 choseForm = new Form4();
+            this.Hide();
+            choseForm.Show();
+        }
     }
 }

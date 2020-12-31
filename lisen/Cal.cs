@@ -62,7 +62,6 @@ namespace lisen
             Double Ip;
             Double EER;
             Double Ts;
-            n = n / 100;
             Qp = Q * n;
             Pp = P * (A1 * n * n + A2 * n + A3);
             Ip = P * 1000 / (3 * 220 * (B1 * n * n + B2 * n + B3));
@@ -124,7 +123,7 @@ namespace lisen
                 Qoil = ms * (hd - hdm);
                 Tob = Tdm - Q / CPO / moil;
             }
-            mLp = mc2;
+            mLp = ms;
             return new string[] { P.ToString("0.00"), Q.ToString("0.00"),(Q/P).ToString("0.00"),I.ToString("0.00"),mLp.ToString("0.00") };
 
         }

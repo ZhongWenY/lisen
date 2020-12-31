@@ -4,6 +4,8 @@ namespace lisen
 {
     partial class Form2
     {
+        System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+        int flag = 0;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -28,11 +30,28 @@ namespace lisen
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+    
+        public void set_chart(int minX,int maxX,int minY,int maxY)
+        {
+            if (flag == 0)
+            {
+                flag = 1;
+                this.chart1.ChartAreas.Add(chartArea2);
+            }
+            chartArea2.AxisX.Interval = 5;
+            chartArea2.AxisX.Maximum = maxX;
+            chartArea2.AxisX.Minimum = minX;
+            chartArea2.AxisY.Interval = 10;
+            chartArea2.AxisY.Maximum = maxY;
+            chartArea2.AxisY.Minimum = minY;
+        }
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+          //  System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.compressor_textBox = new System.Windows.Forms.TextBox();
             this.compressor_comboBox = new System.Windows.Forms.ComboBox();
             this.power_textBox = new System.Windows.Forms.TextBox();
@@ -129,6 +148,8 @@ namespace lisen
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -299,24 +320,19 @@ namespace lisen
             // 
             // chart1
             // 
-            chartArea1.AxisX.Interval = 5D;
-            chartArea1.AxisX.Maximum = 20D;
-            chartArea1.AxisX.Minimum = -20D;
-            chartArea1.AxisY.Interval = 10D;
-            chartArea1.AxisY.Maximum = 75D;
-            chartArea1.AxisY.Minimum = 10D;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+  
+
+//            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Location = new System.Drawing.Point(271, 30);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series2";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "Series2";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(367, 203);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
@@ -1068,6 +1084,7 @@ namespace lisen
             this.dayin_button.TabIndex = 86;
             this.dayin_button.Text = "打印";
             this.dayin_button.UseVisualStyleBackColor = true;
+            this.dayin_button.Click += new System.EventHandler(this.dayin_button_Click);
             // 
             // excel_button
             // 
@@ -1168,6 +1185,20 @@ namespace lisen
             this.textBox42.Size = new System.Drawing.Size(69, 14);
             this.textBox42.TabIndex = 96;
             this.textBox42.Text = "Deg.C";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Form2
             // 
@@ -1271,9 +1302,11 @@ namespace lisen
             this.Controls.Add(this.lnwendu_textBox0);
             this.Controls.Add(this.cool_comboBox);
             this.Controls.Add(this.cool_textBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "性能计算";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
@@ -1378,5 +1411,7 @@ namespace lisen
         private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.TextBox textBox41;
         private System.Windows.Forms.TextBox textBox42;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

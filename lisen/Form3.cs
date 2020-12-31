@@ -11,9 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-//using Microsoft.Office.Interop.Excel;
-//using System.Reflection
-
+using Spire.Xls;
 namespace lisen
 {
     public partial class Form3 : Form
@@ -256,15 +254,17 @@ namespace lisen
             sheet1.ForceFormulaRecalculation = true;
             //生成新的excel 
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "*.xls|*.xlsx";
+            sfd.Filter = "*.xls|*.xls";
             sfd.FilterIndex = 0;
             sfd.RestoreDirectory = true;
             sfd.CreatePrompt = true;
             sfd.InitialDirectory = "c://";
             sfd.FileName = "性能表";
+            sfd.DefaultExt = "xls";
             int flag = 0;
             if (sfd.ShowDialog() == DialogResult.OK) {
                 string localFilePath = sfd.FileName.ToString(); //获得文件路径 
+                
                
                 try
                 {
@@ -286,37 +286,54 @@ namespace lisen
         {
             MessageBox.Show(s, "苏州利森压缩机选型软件", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
+        public void ChangeExcel2Image(string filename)
+        {
+            Spire.Xls.Workbook workbook = new Spire.Xls.Workbook();
+            workbook.LoadFromFile(filename);
+            Spire.Xls.Worksheet sheet = workbook.Worksheets[0];
+            sheet.SaveToImage("性能表.jpg"); //图片后缀.bmp ,imagepath自己设置
+        }
 
         private void print_btn_Click(object sender, EventArgs e)
         {
             string str = System.IO.Directory.GetCurrentDirectory();
-
-           file = new FileStream(System.IO.Directory.GetCurrentDirectory() + "/性能表.xls", FileMode.Create);
+            file = new FileStream(System.IO.Directory.GetCurrentDirectory() + "/性能表.xls", FileMode.Create);
             hssfworkbook.Write(file);
             file.Close();
-            PrintPriviewExcelFile(str+"/性能表.xls");
-            
+            // PrintPriviewExcelFile(str+"/性能表.xls");
+            ChangeExcel2Image("性能表.xls");
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+
         }
 
-        public void PrintPriviewExcelFile(string filePath)
 
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-          
-            Microsoft.Office.Interop.Excel.ApplicationClass xlApp = new Microsoft.Office.Interop.Excel.ApplicationClass();
-            xlApp.Visible = true;
-            object oMissing = System.Reflection.Missing.Value;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filePath, 0, true, 5, oMissing, oMissing, true, 1, oMissing, false, false, oMissing, false, oMissing, oMissing);
-            Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkbook.Worksheets[1];
-            xlWorksheet.PrintPreview(null);
-            xlApp.Visible = false;
-            xlWorksheet = null;
+            GC.Collect();
+            Graphics g = e.Graphics;
+            //imagepath是指 excel转成的图片的路径
+            String imagepath = "性能表.jpg";
+            using (Bitmap bitmap = new Bitmap(imagepath))
+            {
+                //如何截取自己摸索
+                //System.Drawing.Rectangle newarea = new System.Drawing.Rectangle();
+                // newarea.X = 0;
+                // newarea.Y = 50;
+                // newarea.Width = bitmap.Width;
+                // newarea.Height = bitmap.Height - 50;
+                // using (Bitmap newbitmap = bitmap.Clone(newarea, bitmap.PixelFormat))
+                //  {
+                //g.DrawImage(newbitmap, 125, 125, newbitmap.Width - 200, newbitmap.Height - 150);
+                //  }
+                g.DrawImage(bitmap, 0, 0);
+            }
         }
 
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
 
-        /// <summary>
-        /// 释放资源
-        /// </summary>
-        /// <param name="o"></param>
+        }
 
     }
 }
